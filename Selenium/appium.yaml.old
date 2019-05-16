@@ -1,0 +1,70 @@
+# Is this required?
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appium
+  namespace: selenium
+  labels:
+    app: appium
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: appium
+  template:
+    metadata:
+      labels:
+        app: appium
+    spec:
+      containers:
+      - name: appium
+        image: appium/appium
+        ports:
+          - name: port4723
+            containerPort: 4723
+        env:
+          - name: APPIUM
+            value: "true"
+          - name: CONNECT_TO_GRID
+            value: "true"
+          - name: SELENIUM_HOST
+            value: "selenium-hub"
+          - name: SELENIUM_PORT
+            value: "4444"
+          - name: APPIUM_HOST
+            value: "appium"
+          - name: APPIUM_PORT
+            value: "4723"
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: ".5"
+        securityContext:
+          allowPrivilegeEscalation: true
+        volumeMounts:
+          - name: apps
+            mountPath: /root/tmp
+      volumes:
+      - name: apps
+        azureFile:
+          secretName: azure-secret
+          shareName: apps
+          readOnly: false
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: appium
+  namespace: selenium
+  labels:
+    app: appium
+spec:
+  ports:
+  - port: 4723
+    targetPort: 4723
+    name: port4723
+  selector:
+    app: appium
+  type: NodePort

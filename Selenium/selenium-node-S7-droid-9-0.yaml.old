@@ -1,0 +1,113 @@
+##### ffs
+# https://medium.com/@Malinskiy/android-ci-with-kubernetes-684713a83eec
+# Try on windows?
+
+# low values for demo
+#--horizontal-pod-autoscaler-sync-period=5s
+#--horizontal-pod-autoscaler-downscale-stabilization=30s
+#--horizontal-pod-autoscaler-use-rest-clients=true
+# cpu-percent should be set low - e.g. its doing something
+
+
+# docker run --privileged -d -p 6080:6080 -p 5554:5554 -p 5555:5555 -e  --name android-container budtmo/docker-android-x86-8.1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: selenium-node-s7-droid-9-0
+  namespace: selenium
+  labels:
+    app: selenium-node-s7-droid-9-0
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: selenium-node-s7-droid-9-0
+  template:
+    metadata:
+      labels:
+        app: selenium-node-s7-droid-9-0
+    spec:
+      containers:
+      - name: selenium-node-s7-droid-9-0
+#       image: budtmo/docker-android-x86-9.0
+        image: budtmo/docker-android-x86-8.1
+#        image: budtmo/docker-android-genymotion
+        ports:
+          - name: port6080
+            containerPort: 6080
+          - name: port5554
+            containerPort: 5554
+          - name: port5555
+            containerPort: 5555
+        env:
+          # - name: TYPE
+          #   value: aws
+          - name: DEVICE
+#           value: "Samsung Galaxy S7"
+            value: "Samsung Galaxy S6"
+          - name: APPIUM
+            value: "true"
+          - name: CONNECT_TO_GRID
+            value: "true"
+          - name: MOBILE_WEB_TEST
+            value: "true"
+          - name: SELENIUM_HOST
+            value: "selenium-hub"
+          - name: SELENIUM_PORT
+            value: "4444"
+          - name: APPIUM_HOST
+            #value: "appium"
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: APPIUM_PORT
+            value: "4723"
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: ".5"
+        securityContext:
+          allowPrivilegeEscalation: true
+        volumeMounts:
+          - name: apps
+            mountPath: /root/tmp
+          - name: kvm
+            mountPath: /dev/kvm
+      volumes:
+      - name: apps
+        azureFile:
+          secretName: azure-secret
+          shareName: apps
+          readOnly: false
+      - name: kvm
+        hostPath:
+          path: /dev/kvm
+          type: CharDevice
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: selenium-node-s7-droid-9-0
+  namespace: selenium
+  labels:
+    app: selenium-node-s7-droid-9-0
+spec:
+  ports:
+  - port: 6080
+    targetPort: 6080
+    name: port6080
+  - port: 5554
+    targetPort: 5554
+    name: port5554
+  - port: 5555
+    targetPort: 5555
+    name: port5555
+  - port: 4723
+    targetPort: 4723
+    name: port4723
+  selector:
+    app: selenium-node-s7-droid-9-0
+  type: NodePort
+  sessionAffinity: ClientIP # todo make it so we can access diff pods
