@@ -18,3 +18,24 @@ Start-Sleep -Seconds 60
 & "C:\Program Files (x86)\Microsoft XDE\10.0.10586.0\xde.exe" --% /sku Android /displayName "VS Emulator Phone3" /memSize 512 /diagonalSize 5 /video "480x800" /vhd "C:\Users\testing\AppData\Local\Microsoft\VisualStudioEmulator\Android\Containers\Local\Devices\vhd\Phone3\image.vhd" /name "VS Emulator Phone3.testing"
 Start-Sleep -Seconds 60
 & "C:\Program Files (x86)\Microsoft XDE\10.0.10586.0\xde.exe" --% /sku Android /displayName "VS Emulator Phone4" /memSize 512 /diagonalSize 5 /video "480x800" /vhd "C:\Users\testing\AppData\Local\Microsoft\VisualStudioEmulator\Android\Containers\Local\Devices\vhd\Phone4\image.vhd" /name "VS Emulator Phone4.testing"
+
+Either have uuids increment 'blahHostIndexDeviceIndex' 
+Or set uuids based on vmid, get uuids and share them somehow - selenium must know them?
+
+
+aks android sdk
+ask android genymotion
+then linux vm
+then android on windows 2019 crashes
+then 2016
+no internet:
+    bridge connections with VM on public device
+    loop back device (public)
+    then NAT
+    script to add private NICs
+startup issues:
+    desktop 0
+    auto login
+    mstsc
+    screen res
+    finally command line launcher
