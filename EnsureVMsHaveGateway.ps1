@@ -25,7 +25,7 @@
 }
 
 while ( 1 -eq 1 ) {
-    Get-Vm | Where-Object { [System.TimeSpan] $_.Uptime -gt [System.TimeSpan]"00:01:00" } | ForEach-Object -Process { Add-GatewayToVm $_.Name }
+    Get-Vm | Where-Object { [System.TimeSpan] $_.Uptime -gt [System.TimeSpan]"00:00:30" } | ForEach-Object -Process { Add-GatewayToVm $_.Name }
     Start-Sleep -Seconds 5
 }
 

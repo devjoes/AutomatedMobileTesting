@@ -1,0 +1,27 @@
+{
+  "capabilities":
+      [
+        {
+          "browserName": "android",
+          "maxInstances": 3,
+          "platform":"android",
+	  "connectHardwareKeyboard":"true",
+          "platformName": "Android",
+          "automationName": "UiAutomator1",
+	  "newCommandTimeout": "120"
+        }
+      ],
+  "configuration":
+  {
+    "cleanUpCycle":2000,
+    "url":"http://10.10.0.5:4723/wd/hub",
+    "host": "10.10.0.5",
+    "port": 4723,
+    "maxSession": 9,
+    "register": true,
+    "registerCycle": 5000,
+    "hubPort": 4444,
+    "hubHost": "10.10.0.10",
+    "hubProtocol": "http"
+  }
+}
