@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DataLogger": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

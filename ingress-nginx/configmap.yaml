@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-configuration
+  namespace: ingress-nginx
+  labels:
+    app: ingress-nginx
+data:
+  client-body-timeout: "100"
+  client-header-timeout: "100"
+  server-tokens: "false"
+  proxy-buffering: "on"
+  proxy-buffer-size: "128k"
+  proxy-buffers: "4 256k"
+  proxy-busy-buffers-size: "256k"
+  large-client-header-buffers: "4 16k"

@@ -1,0 +1,71 @@
+TODO: Get browser aks containers to auto scale
+Custom k8s cluster might work
+Win10 cluster might work
+Going with VMs
+
+HyperV external vnets dont work in Azure?
+VS emulator tries to use every NIC as an external VNET
+Creating a HyperV cluster might fix all of this
+
+Copy C:\Users\testing\AppData\Local\Microsoft\VisualStudioEmulator\Android\Containers\Local\Devices\4_JellyBean_(4.2)_HDPI_Phone to make more devices
+It always fails on the first boot
+
+
+& "C:\Program Files (x86)\Microsoft XDE\10.0.10586.0\xde.exe" --% /sku Android /displayName "VS Emulator Phone1" /memSize 512 /diagonalSize 5 /video "480x800" /vhd "C:\Users\testing\AppData\Local\Microsoft\VisualStudioEmulator\Android\Containers\Local\Devices\vhd\Phone1\image.vhd" /name "VS Emulator Phone1.testing"
+Start-Sleep -Seconds 60
+& "C:\Program Files (x86)\Microsoft XDE\10.0.10586.0\xde.exe" --% /sku Android /displayName "VS Emulator Phone2" /memSize 512 /diagonalSize 5 /video "480x800" /vhd "C:\Users\testing\AppData\Local\Microsoft\VisualStudioEmulator\Android\Containers\Local\Devices\vhd\Phone2\image.vhd" /name "VS Emulator Phone2.testing"
+Start-Sleep -Seconds 60
+& "C:\Program Files (x86)\Microsoft XDE\10.0.10586.0\xde.exe" --% /sku Android /displayName "VS Emulator Phone3" /memSize 512 /diagonalSize 5 /video "480x800" /vhd "C:\Users\testing\AppData\Local\Microsoft\VisualStudioEmulator\Android\Containers\Local\Devices\vhd\Phone3\image.vhd" /name "VS Emulator Phone3.testing"
+Start-Sleep -Seconds 60
+& "C:\Program Files (x86)\Microsoft XDE\10.0.10586.0\xde.exe" --% /sku Android /displayName "VS Emulator Phone4" /memSize 512 /diagonalSize 5 /video "480x800" /vhd "C:\Users\testing\AppData\Local\Microsoft\VisualStudioEmulator\Android\Containers\Local\Devices\vhd\Phone4\image.vhd" /name "VS Emulator Phone4.testing"
+
+Either have uuids increment 'blahHostIndexDeviceIndex' 
+DID THIS ONE Or set uuids based on vmid, get uuids and share them somehow - selenium must know them?
+
+launch.ps1 runs on login
+the "testing" user auto logs in
+shutdown.ps1 runs on logoff and shutdown
+
+mount network share then run:
+mklink /d C:\apps \\jsuiautomationapps.file.core.windows.net\selenium\apps
+
+aks android sdk
+ask android genymotion
+then linux vm
+then android on windows 2019 crashes
+then 2016
+no internet:
+    bridge connections with VM on public device
+    loop back device (public)
+    then NAT
+    script to add private NICs
+startup issues:
+    desktop 0
+    auto login
+    mstsc
+    screen res
+    finally command line launcher
+
+
+az vm deallocate --resource-group rg-joe-testing-talk --name DroidHost0
+az vm generalize --resource-group rg-joe-testing-talk --name DroidHost0
+az image create --resource-group rg-joe-testing-talk --name DroidHostImgSysPrepped6 --source DroidHost0
+az vmss create  --resource-group rg-joe-testing-talk --name DroidScaleSet2 --image "DroidHostImgSysPrepped6" --admin-username testing  --admin-password #password# --vm-sku "Standard_D4s_v3" --instance-count 2 --vnet-name "vnet-common" --subnet common --backend-port 3389
+ #--custom-data "scaleset.cloudinit.yml"
+
+TODO: Put new config.json and launch.ps1 in to vm image (and remove from share)
+
+TODO: Add documentation + README on dockerised testing
+TODO: remove reg run. Can we start appim then add devices?
+Ask MS: How many VMs on a server?
+
+docker build . -f DataLogger\Dockerfile -t joes88/automated-mobile-testing:datalogger-1
+docker push joes88/automated-mobile-testing:datalogger-1
+
+docker build . -f SeleniumInfo\Dockerfile -t joes88/automated-mobile-testing:seleniuminfo-1
+docker push joes88/automated-mobile-testing:seleniuminfo-1
+
+docker build . -f Management.Api\Dockerfile -t joes88/automated-mobile-testing:management-1
+docker push joes88/automated-mobile-testing:management-1
+
+kubectl apply -f deploy.yaml
