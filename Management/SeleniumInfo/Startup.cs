@@ -29,7 +29,6 @@ namespace SeleniumInfo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // todo: settings
             services.AddScoped<IQuery<IEnumerable<CloudFile>>>(s => new GetFilesFromStorageAccount(
                 new StorageCredentials(this.Configuration["storageaccount_name"], this.Configuration["storageaccount_key"]),
                 new Uri("https://jsuiautomationapps.file.core.windows.net/"), "selenium"));

@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "mocha-parallel-tests --require babel-core/register --timeout 0 --slow 1000 ./test/**/*.test.js"
+    "test": "mocha-parallel-tests --require babel-core/register --timeout 0  --max-parallel 60 ./test/**/*.test.js",
+    "stest": "mocha --require babel-core/register --timeout 0 ./test/**/*.test.js"
   },
   "dependencies": {
     "child_process": "^1.0.2",

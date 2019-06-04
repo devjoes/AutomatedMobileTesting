@@ -31,6 +31,11 @@ namespace Management.Api
             services.AddSingleton(s =>
                 ConnectionMultiplexer.Connect(
                     ConfigurationOptions.Parse(s.GetService<IConfiguration>().GetConnectionString("redis"))));
+            services.AddLogging(c =>
+            {
+                c.AddConsole();
+                c.SetMinimumLevel(LogLevel.Information);
+            });
             services.AddScoped(s => s.GetService<ConnectionMultiplexer>().GetDatabase());
             services.AddScoped<AllocateFreeEmulator>();
             services.AddScoped<DeAllocateEmulator>();

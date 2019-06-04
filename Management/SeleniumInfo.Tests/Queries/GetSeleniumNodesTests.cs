@@ -76,7 +76,7 @@ namespace SeleniumInfo.Tests.Queries
     {
         private readonly string name;
         private readonly FileProperties properties;
-        private string content;
+        private readonly string content;
 
         public MockCloudFile(string name, string content, DateTimeOffset lastMod) : base(new Uri("https://foo.bar/bat"))
         {

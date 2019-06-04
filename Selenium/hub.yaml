@@ -23,11 +23,13 @@ spec:
         env:
           - name: "SE_OPTS"
             value: "-debug"
+#          - name: "GRID_NEW_SESSION_WAIT_TIMEOUT"
+#            value: "90000"
 # When doing parallel testing selenium needs lots of resources https://github.com/SeleniumHQ/docker-selenium/issues/695
         resources:
           limits:
-            memory: "4000Mi"
-            cpu: "2"
+            memory: "2000Mi"
+            cpu: "1"
         livenessProbe:
           httpGet:
             path: /wd/hub/status

@@ -17,7 +17,7 @@ namespace DataLogger.Tests
     public class UnitTest1
     {
         private const string NodesUrl = "http://seleniuminfo/api/nodes";
-        private Mock<IConfiguration> config;
+        private readonly Mock<IConfiguration> config;
 
         public UnitTest1()
         {

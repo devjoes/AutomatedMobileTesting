@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 
 
-export let wdConnection =  'http://demo:demo@40.113.3.66/wd/hub';
+export let wdConnection = 'http://demo:demo@40.113.3.66/wd/hub';
 
 // export let wdCapabilities = {
 //   "deviceName":"android",
@@ -19,7 +19,7 @@ export let wdCapabilities = {
   "platformVersion": "4.2.2",
   "app": "/apps/app.apk",
   "browserName":"android",
-  "fullReset":true
+  "newSessionWaitTimeout":60000
 
   // "deviceName": "http://10.10.0.6:4723",
   // "browserVersion": "node-droid7227000007",

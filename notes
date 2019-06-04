@@ -65,7 +65,10 @@ docker push joes88/automated-mobile-testing:datalogger-1
 docker build . -f SeleniumInfo\Dockerfile -t joes88/automated-mobile-testing:seleniuminfo-1
 docker push joes88/automated-mobile-testing:seleniuminfo-1
 
-docker build . -f Management.Api\Dockerfile -t joes88/automated-mobile-testing:management-1
-docker push joes88/automated-mobile-testing:management-1
+docker build . -f Management.Api\Dockerfile -t joes88/automated-mobile-testing:management-8
+docker push joes88/automated-mobile-testing:management-8
 
 kubectl apply -f deploy.yaml
+
+MAX SESSIONS SHOULD == NUM OF EMULATORS
+DECREASE BACKOFF/LOOK AT WHY SESSIONS ARENT BEING CLEARED

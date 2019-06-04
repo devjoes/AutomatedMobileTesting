@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Management.Api.Commands;
+using Management.Api.Models;
 using Management.Core;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,9 +42,10 @@ namespace Management.Api.Controllers
         }
         
         [HttpDelete]
-        public async Task Delete([FromBody]string emulator)
+        public async Task Delete([FromBody]TestAllocatedToEmulator model)
         {
-            this.deAllocateEmulator.Emulator = emulator;
+            this.deAllocateEmulator.Emulator = model.Emulator;
+            this.deAllocateEmulator.TestName = model.Test;
             this.deAllocateEmulator.Validate();
             await this.deAllocateEmulator.Execute();
         }

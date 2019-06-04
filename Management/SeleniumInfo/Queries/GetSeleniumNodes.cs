@@ -11,7 +11,7 @@ namespace SeleniumInfo.Queries
     public class GetSeleniumNodes : IQuery<IDictionary<string, string[]>>
     {
         public const int MaxAgeSecs = 90;
-        private IQuery<IEnumerable<CloudFile>> getFilesQuery;
+        private readonly IQuery<IEnumerable<CloudFile>> getFilesQuery;
 
         public GetSeleniumNodes(IQuery<IEnumerable<CloudFile>> getFilesQuery)
         {

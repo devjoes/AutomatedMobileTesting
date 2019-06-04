@@ -62,7 +62,7 @@ metadata:
   name: management
   namespace: management
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -70,7 +70,7 @@ spec:
     spec:
       containers:
         -
-          image: joes88/automated-mobile-testing:management-1
+          image: joes88/automated-mobile-testing:management-8
           name: management
           resources:
             limits:
@@ -79,6 +79,9 @@ spec:
             requests:
               cpu: "100m"
               memory: "100Mi"
+          env:
+           - name: MaxQueueLength
+             value: "1"
           ports:
             -
               containerPort: 80

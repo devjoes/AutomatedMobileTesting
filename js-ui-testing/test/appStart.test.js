@@ -1,16 +1,43 @@
-import {  describe,  it} from 'mocha';
-import {  expect} from 'chai';
-import {  getDriver,  releaseDriver} from '../src/providers/webdriver';
+import {
+  describe,
+  it
+} from 'mocha';
+import {
+  expect
+} from 'chai';
+import {
+  getDriver,
+  releaseDriver,
+  debug
+} from '../src/providers/webdriver';
+import {
+  basename
+} from 'path';
 
-describe('When application first starts', function () {
+describe('When application first starts ' + basename(__filename), function () {
   let node;
   before(async () => {
-    node = await getDriver(this.title, {});
+    try {
+      debug('Gettting emulator');
+      node = await getDriver(this.title, {});
+      debug('Got emulator ' + node.emulator);
+    } catch (err) {
+      debug('Error in appStart.begin', JSON.stringify(err));
+      throw err;
+    }
   });
   after(async () => {
-    await releaseDriver(node.emulator, node.driver, {});
+    if (node) {
+      await releaseDriver(node.emulator, this.title, node.driver, {});
+    }
   });
   it('Then the test text should not be visible', async () => {
-    expect(await node.driver.elementByAccessibilityIdOrNull('MainActivity-TestText')).to.be.null;
+    try {
+      const testText = await node.driver.elementByAccessibilityIdOrNull('MainActivity-TestText');
+      expect(testText).to.be.null;
+    } catch (err) {
+      debug('Error in it', JSON.stringify(err));
+      throw err;
+    }
   });
 });
