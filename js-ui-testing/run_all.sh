@@ -7,6 +7,10 @@ bash run_single.sh "droid722700001J_0:5555" | tee /c/temp/logs/droid722700001J_0
 bash run_single.sh "droid722700001J_1:5555" | tee /c/temp/logs/droid722700001J_1 &
 bash run_single.sh "droid722700001J_2:5555" | tee /c/temp/logs/droid722700001J_2 &
 
+bash run_single.sh "droid722700002E_0:5555" | tee /c/temp/logs/droid722700001J_0 &
+bash run_single.sh "droid722700002E_1:5555" | tee /c/temp/logs/droid722700001J_1 &
+bash run_single.sh "droid722700002E_2:5555" | tee /c/temp/logs/droid722700001J_2 &
+
 exit
 bash run_single.sh "droid7227000007_0:5555" | tee /c/temp/logs/droid7227000007_0 &
 bash run_single.sh "droid7227000007_1:5555" | tee /c/temp/logs/droid7227000007_1 &

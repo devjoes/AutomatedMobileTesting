@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: selenium-hub
-        image: selenium/hub:3.141
+        image: joes88/selenium-api:tmp3
         ports:
           - containerPort: 4444
         env:
@@ -32,7 +32,7 @@ spec:
             cpu: "1"
         livenessProbe:
           httpGet:
-            path: /wd/hub/status
+            path: /grid/admin/Console/nodes #/wd/hub/status
             port: 4444
           initialDelaySeconds: 30
           timeoutSeconds: 5
