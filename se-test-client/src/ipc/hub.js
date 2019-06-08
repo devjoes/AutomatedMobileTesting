@@ -3,7 +3,6 @@ import ipc from 'node-ipc';
 
 ipc.config.id = 'testing';
 ipc.config.retry = 1500;
-ipc.config.sync = true;
 ipc.config.silent = true;
 
 export default data => {
@@ -17,7 +16,7 @@ export default data => {
                 clearInterval(tmr);
                 data.incrementQueueLength(em.udid);
                 ipc.server.emit(socket, 'got_emulator_for_' + r.clientId, em);
-            });
+            }, 1000);
         });
         ipc.server.on('release_emulator', r => {
             data.decrementQueueLength(r.udid);

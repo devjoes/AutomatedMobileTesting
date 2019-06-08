@@ -5,11 +5,11 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/lib/index.js",
+            "program": "${workspaceRoot}/dist/index.js",
             "cwd": "${workspaceRoot}",
             "preLaunchTask": "build",
             "outFiles": [
-                "${workspaceRoot}/lib/**.js"
+                "${workspaceRoot}/dist/**.js"
             ]
         }
     ]

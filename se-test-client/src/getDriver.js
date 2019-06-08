@@ -10,7 +10,8 @@ export default async ctx => {
     const client = await ipcClient(driver.clientId);
     const {
         udid,
-        host
+        host,
+        totalEmulators
     } = await client.getEmulator();
     if (ctx && ctx.test){
         ctx.test.udid = udid;
@@ -20,15 +21,15 @@ export default async ctx => {
         udid,
         //deviceName: udid
     });
-    console.log('Getting driver', caps);
     await driver.init(caps);
-    console.log('Got driver');
     driver.client = client;
     driver.udid = udid;
     driver._quit = driver.quit;
     driver.quit = function() {
+        console.log('Released driver: ' + this.clientId)
         this._quit();
         this.client.releaseEmulator(this.udid);
     };
-    return driver;
+    console.log('Got driver: '+ driver.clientId);
+    return {driver, totalEmulators};
 }

@@ -5,6 +5,7 @@ import syncEmulators from './client/syncEmulators';
 import syncRequests from './client/syncRequests';
 import hub from './ipc/hub';
 import emulatorData from './emulatorData';
+import config from './config';
 
 const data = emulatorData();
 
@@ -19,15 +20,16 @@ const setup = async () => {
 const runTests = () => new Promise(res => {
     const mocha = new Mocha({
         timeout: 0,
-        retries: 3 // selenium can be a bit unreliable
+        retries: 10 // selenium can be a bit unreliable
     });
+    mocha.setMaxParallel(data.emulators.length * config.maxQueueLength);
     fs.readdir(path.join(__dirname, 'tests'), (err, files) => {
         if (err) {
             return console.error(err);
         }
 
         //TODO: Remove!!
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 100; i++) {
             files.forEach(f => mocha.addFile(path.join(__dirname, 'tests', f)));
         }
         console.log(mocha.files);
@@ -38,8 +40,8 @@ const runTests = () => new Promise(res => {
         });
 
         runner.on('fail', test =>
-             test && test.udid && data.testFailure(test.udid));
-        
+            test && test.udid && data.testFailure(test.udid));
+
     });
 });
 setup()

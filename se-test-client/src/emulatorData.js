@@ -1,12 +1,30 @@
 import config from './config';
 
+const sum = (a, f) =>
+    a.reduce((acc, i) => {
+        acc += f(i);
+        return acc;
+    }, 0);
+
+const randomishIndex = ems => {
+    const sumFailures = sum(ems, i => i.failures);
+    const weightedIndexes = Object.keys(ems).reduce((acc, index) => {
+        for (let i = 0; i < ((sumFailures - ems[index].failures) + 1); i++) {
+            acc.push(index);
+        }
+        return acc;
+    }, []);
+    return weightedIndexes[Math.round(Math.random() * 10000) % weightedIndexes.length];
+};
+
 export default () => ({
     emulators: {},
     getEmulator: function () {
         const availableEms = Object.values(this.emulators)
             .filter(e => e.readyBy < new Date().getTime() && e.queueLength < config.maxQueueLength);
+
         return availableEms.length ?
-            availableEms[Math.round(Math.random() * 1000) % availableEms.length] :
+            availableEms[randomishIndex(availableEms)] :
             null;
     },
     incrementQueueLength: function (udid) {
@@ -37,7 +55,7 @@ export default () => ({
             this.emulators[k].readyBy = new Date().getTime()
         });
     },
-    testFailure: function(udid) {
+    testFailure: function (udid) {
         this.emulators[udid].failures++;
     }
 });

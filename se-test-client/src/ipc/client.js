@@ -2,7 +2,6 @@ import ipc from 'node-ipc';
 
 ipc.config.id = 'testing';
 ipc.config.retry = 1500;
-ipc.config.sync = true;
 ipc.config.silent = true;
 
 export default clientId => ({
