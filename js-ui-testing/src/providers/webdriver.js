@@ -70,6 +70,9 @@ export const getDriver = async (testName, {
   managementUrl = defaultManagementUrl,
   depth = 0
 }) => {
+  const udid = process.env.udid;
+  const node = 'node-'+ udid.split('_')[0];
+  return await getSimpleDriver(node, udid, connection, capabilities);
   // This results in a promise that is never resolved
   //return await promiseWithTimeout(new Promise(async res => {
   debug('started get driver ', depth, testName, new Date());

@@ -1,6 +1,0 @@
-""  
-Gettting emulator
-started get driver |0|When application first starts appStart.test.js|Tue Jun 04 2019 17:11:44 GMT+0100 (British Summer Time)
-200|OK|
-getting driver |0|When application first starts appStart.test.js|droid722700001J_0:5555|Tue Jun 04 2019 17:11:44 GMT+0100 (British Summer Time)
-init driver|When application first starts appStart.test.js|droid722700001J_0:5555
