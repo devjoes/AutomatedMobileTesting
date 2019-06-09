@@ -12,10 +12,11 @@ import {
 import mlog from 'mocha-logger';
 
 describe('When application first starts ' + basename(__filename), function () {
-    let driver;
-    before(async () => {
+    mlog.log('Describe start');
+    let driver, erroredInIt;
+    const retrieveDriver = async () => {
         let attempts = 0;
-        let totalEmulators = 30; //TODO: get this somehow
+        let totalEmulators = 2; //TODO: get this somehow
         while (!driver && attempts++ < totalEmulators)
             try {
                 mlog.log('Gettting emulator');
@@ -29,7 +30,21 @@ describe('When application first starts ' + basename(__filename), function () {
                 const resp = await getDriver(this.ctx);
                 driver = resp.driver;
             }
+    };
+    beforeEach(async () => {
+        mlog.log('before each ', erroredInIt)
+        if (!driver || erroredInIt) {
+            if (driver) {
+                try {
+                    await driver.quit();
+                } catch (_) {}
+            }
+            driver = null;
+            erroredInIt = false;
+            await retrieveDriver();
+        }
     });
+    before(retrieveDriver);
     after(async () => {
         if (driver) {
             await driver.quit();
@@ -42,6 +57,7 @@ describe('When application first starts ' + basename(__filename), function () {
             expect(testText).to.be.null;
         } catch (err) {
             mlog.log('Error in it', JSON.stringify(err));
+            erroredInIt = true;
             throw err;
         }
     });
@@ -49,10 +65,11 @@ describe('When application first starts ' + basename(__filename), function () {
     it('Then the test text should still not be visible', async () => {
         try {
             const testText = await driver.elementByAccessibilityIdOrNull('MainActivity-TestText');
-            await new Promise(r => setTimeout(r, 2000));
+            //await new Promise(r => setTimeout(r, 2000));
             expect(testText).to.be.null;
         } catch (err) {
             mlog.log('Error in it', JSON.stringify(err));
+            erroredInIt = true;
             throw err;
         }
     });

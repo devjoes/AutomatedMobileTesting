@@ -20,6 +20,7 @@ const setup = async () => {
 const runTests = () => new Promise(res => {
     const mocha = new Mocha({
         timeout: 0,
+        slow:0,
         retries: 10 // selenium can be a bit unreliable
     });
     mocha.setMaxParallel(data.emulators.length * config.maxQueueLength);
@@ -28,9 +29,12 @@ const runTests = () => new Promise(res => {
             return console.error(err);
         }
 
+        //TODO: It hangs on the last test
+
         //TODO: Remove!!
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 5; i++) {
             files.forEach(f => mocha.addFile(path.join(__dirname, 'tests', f)));
+            //mocha.addFile("C:\\Development\\testing-talk\\AutomatedMobileTesting\\se-test-client\\src\\tests\\retry.test.js");
         }
         console.log(mocha.files);
 

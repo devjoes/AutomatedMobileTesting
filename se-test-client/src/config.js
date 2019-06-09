@@ -11,6 +11,7 @@ export default {
         'platformVersion': '4.2.2',
         'app': '/apps/app.apk',
         'browserName': 'android',
-        'newSessionWaitTimeout': 60000
+        'newSessionWaitTimeout': 30000,
+        'fullReset':false
     }
 }
