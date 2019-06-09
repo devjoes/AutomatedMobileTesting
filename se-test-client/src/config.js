@@ -5,6 +5,7 @@ export default {
     },
     maxQueueLength: 2,
     emulatorUpdateCoolOffMs: 5000,
+    maxTestDurationSecs: 60,
     capabilities: {
         'deviceName': 'android',
         'platformName': 'android',
