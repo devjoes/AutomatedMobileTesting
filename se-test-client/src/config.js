@@ -22,6 +22,7 @@ export default {
         //'app': '/apps/app.apk',
         'browserName': 'android',
         'newSessionWaitTimeout': 30000,
+        'waitTimeout': 30000,
         'fullReset': false
     }
 }

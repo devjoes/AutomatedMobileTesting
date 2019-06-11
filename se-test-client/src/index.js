@@ -21,7 +21,7 @@ const runTests = () => new Promise(res => {
     const mocha = new Mocha({
         timeout: 0, // 2*60*1000,
         slow:0,
-        //retries: 10 // selenium can be a bit unreliable
+        //retries: 10 // selenium can be a bit unreliable - we now retry in 
     });
      mocha.setMaxParallel(data.emulators.length * config.maxQueueLength);
     fs.readdir(path.join(__dirname,'..', 'tests'), (err, files) => {
@@ -31,11 +31,10 @@ const runTests = () => new Promise(res => {
 
         //TODO: Make it give up if takes x time more than the average time to get a driver
 
-        //TODO: Remove!!
-        for (let i = 0; i < 30; i++) {
+        // Lots of tests for demonstration purposes
+        for (let i = 0; i < 60; i++) {
             files.filter(f => f.match(/test\.js/i))
                 .forEach(f => mocha.addFile(path.join(__dirname,'..', 'tests', f)));
-            //mocha.addFile("C:\\Development\\testing-talk\\AutomatedMobileTesting\\se-test-client\\src\\tests\\retry.test.js");
         }
 
         const runner = mocha.run(failures => {
