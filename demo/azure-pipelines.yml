@@ -6,6 +6,7 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
+# Commented out for the demo - I don't want to have to wait for it to build
 # - task: Gradle@2
 #   displayName: 'Build Android App'
 #   inputs:
