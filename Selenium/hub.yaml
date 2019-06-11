@@ -17,8 +17,7 @@ spec:
     spec:
       containers:
       - name: selenium-hub
-        image: joes88/selenium-api:tmp8
-        imagePullPolicy: Always #todo: remove
+        image: joes88/selenium-api:0.8.1
         ports:
           - containerPort: 4444
         env:
