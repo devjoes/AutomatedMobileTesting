@@ -7,6 +7,7 @@ pool:
 
 steps:
 - task: Gradle@2
+  displayName: 'Build Android App'
   inputs:
     workingDirectory: './demo/UiTestCalc/'
     gradleWrapperFile: './demo/UiTestCalc/gradlew'
@@ -14,11 +15,8 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'get-childitem . -Recurse'
 - task: AzurePowerShell@4
+  displayName: 'Publish'
   inputs:
     azureSubscription: 'DEV_Retail and Logistics(55476028-cbd9-47a9-bbdd-04dd8b0406fd)'
     ScriptType: 'FilePath'
@@ -26,11 +24,18 @@ steps:
     ScriptArguments: '-buildnumber ($Build.BuildNumber) -src ($Build.SourcesDirectory)'
     azurePowerShellVersion: 'LatestVersion'
 - task: Npm@1
+  displayName: 'Install NPM testing dependencies'
   inputs:
     command: 'install'
     workingDir: './se-test-client'
 - task: Npm@1
+  displayName: 'Run UI tests'
   inputs:
     command: 'custom'
     workingDir: './se-test-client'
     customCommand: 'run test'
+- task: PublishTestResults@2
+  displayName: 'Publish test results'
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
