@@ -37,7 +37,7 @@ describe('Basic calculator tests', async function () {
         const numClicked = '1';
         let sum;
         await testWrapper(ctx, async () => {
-            await pressButtons(ctx.driver, 1);
+            await pressButtons(ctx.driver, clear, 1);
             sum = await ctx.driver.elementByAccessibilityId('sum').text()
         });
         expect(sum).to.equal(numClicked);
@@ -49,15 +49,15 @@ describe('Basic calculator tests', async function () {
         await testWrapper(ctx, async () => {
             await pressButtons(ctx.driver, clear, 1, 2, 3, point, 4, point, point, point, 5);
             sum = await ctx.driver.elementByAccessibilityId('sum').text();
-            await pressButtons(ctx.driver, clear);
+
         });
-        sum.to.equal(`123${pointChar}45`);
+        expect(sum).to.equal(`123${pointChar}45`);
     });
 
     it(`When -2 ${multiplyChar} ${multiplyChar} 2 ${divideChar} ${divideChar} is entered it is displayed and equals -4`, async () => {
         let sum, result;
         await testWrapper(ctx, async () => {
-            await pressButtons(ctx.driver, minus, 2, multiply, multiply, 2, divide, divide);
+            await pressButtons(ctx.driver, clear,minus, 2, multiply, multiply, 2, divide, divide);
             sum = await ctx.driver.elementByAccessibilityId('sum').text();
             await pressButtons(ctx.driver, equals);
             result = await ctx.driver.elementByAccessibilityId('sum').text();
@@ -69,7 +69,7 @@ describe('Basic calculator tests', async function () {
     it('When 2 + 3 is entered it displays and equals 5', async () => {
         let sum, result;
         await testWrapper(ctx, async () => {
-            await pressButtons(ctx.driver, '2', plus, '3');
+            await pressButtons(ctx.driver, clear, '2', plus, '3');
             sum = await ctx.driver.elementByAccessibilityId('sum').text()
             await pressButtons(ctx.driver, equals);
             result = await ctx.driver.elementByAccessibilityId('sum').text();
@@ -81,7 +81,7 @@ describe('Basic calculator tests', async function () {
     it('When 5 * -5 is entered it displays and equals -25', async () => {
         let sum, result;
         await testWrapper(ctx, async () => {
-            await pressButtons(ctx.driver, '5', multiply, minus, '5');
+            await pressButtons(ctx.driver,clear, '5', multiply, minus, '5');
             sum = await ctx.driver.elementByAccessibilityId('sum').text();
             await pressButtons(ctx.driver, equals);
             result = await ctx.driver.elementByAccessibilityId('sum').text();
@@ -103,7 +103,7 @@ describe('Basic calculator tests', async function () {
     it('When a result is cleared it displays 0', async () => {
         let result;
         await testWrapper(ctx, async () => {
-            await pressButtons(ctx.driver, '2', plus, '3', equals);
+            await pressButtons(ctx.driver, clear, '2', plus, '3', equals);
             await pressButtons(ctx.driver, clear);
             result = await ctx.driver.elementByAccessibilityId('sum').text();
         });
@@ -119,6 +119,7 @@ describe('Basic calculator tests', async function () {
         });
         expect(result).to.equal('1');
     });
+    
     it('When a result is shown arithmatic is appended to it', async () => {
         let result;
         await testWrapper(ctx, async () => {
@@ -132,7 +133,7 @@ describe('Basic calculator tests', async function () {
     it(`When 0 ${divideChar} 0 is entered it is displays and equals NaN`, async () => {
         let sum, result;
         await testWrapper(ctx, async () => {
-            await pressButtons(ctx.driver, '0', divide, '0');
+            await pressButtons(ctx.driver, clear, '0', divide, '0');
             sum = await ctx.driver.elementByAccessibilityId('sum').text();
             await pressButtons(ctx.driver, equals);
             result = await ctx.driver.elementByAccessibilityId('sum').text();

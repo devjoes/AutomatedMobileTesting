@@ -45,8 +45,7 @@ export const getDriver = async (ctx, record = true) => {
                 // If a test gets retried then before() only runs once, we don't want to use beforeEach() and get a driver for each test
                 await ctx.driver.quit(false);
             }
-            debug('Failed to get driver - retrying');
-            ctx.driver = await getDriverFromNode(ctx);
+            debug('Failed to get driver - ' + (attempts < totalEmulators ? 'retrying' : 'giving up'));
         }
 };
 
@@ -65,8 +64,8 @@ export const releaseDriver = async ctx => {
 }
 
 const getDriverFromNode = async ctx => {
-    debug('a', new Date());
-    const driver = promiseChainRemote(config.seleniumUrl + '/wd/hub');
+    let driver;
+    driver = promiseChainRemote(config.seleniumUrl + '/wd/hub');
     driver.clientId = Math.round(Math.random() * 100000);
     let client = await ipcClient(driver.clientId);
     let udid, host
@@ -83,14 +82,7 @@ const getDriverFromNode = async ctx => {
         udid,
         //deviceName: udid
     });
-    debug('b', new Date());
-    try {
-        await driver.init(caps); //TODO: Time this and abort if its slow
-    } catch (err) {
-        debug(err.message);
-        throw err;
-    }
-    debug('c', new Date());
+
     driver.client = client;
     driver.udid = udid;
     driver._quit = driver.quit;
@@ -99,8 +91,34 @@ const getDriverFromNode = async ctx => {
         this._quit();
         this.client.releaseEmulator(this.udid);
     };
+
+    let tmr;
+    await Promise.race([
+        new Promise((_, rej) => {
+            tmr = setTimeout(() => {
+                if (driver) {
+                    try {
+                        driver.quit();
+                    } catch (_) {}
+                }
+                debug('timed out whilst aquiring driver')
+                rej();
+            }, ((config.maxQueueLength + 1) * config.maxTestDurationSecs * 1000) * 2)
+        }),
+        new Promise(async (res, rej) => {
+            try {
+                await driver.init(caps);
+            } catch (err) {
+                debug(err.message);
+                clearTimeout(tmr);
+                rej(err);
+            }
+            clearTimeout(tmr);
+            res();
+        })
+    ]);
+
     debug('Got driver: ' + driver.clientId);
-    debug('d', new Date());
     return driver;
 }
 

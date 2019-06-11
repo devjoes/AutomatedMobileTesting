@@ -1,10 +1,10 @@
-const demo = true;
+//const demo = true;
 export const pressButtons = async (driver, ...buttons) => {
     for(const btn of buttons){
         await driver.elementByAccessibilityId(btn.toString()).click();
-        if (demo) {
-            await new Promise(r => setTimeout(r, 100));
-        }
+        // if (demo) {
+        //     await new Promise(r => setTimeout(r, 100));
+        // }
     }
 }
 
