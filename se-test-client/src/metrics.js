@@ -107,5 +107,5 @@ export const testCompleted = (udid, suiteName, testName, duration) => {
 
 const debug = (...args) => {
     mlog.log(args);
-    fs.appendFileSync('C:\\temp\\log.txt', args.join('\t') + '\n');
+    //fs.appendFileSync('C:\\temp\\log.txt', args.join('\t') + '\n');
 }

@@ -162,5 +162,5 @@ const getTestName = ctx => (ctx.currentTest || ctx.test).title;
 
 const debug = (...args) => {
     mlog.log(args);
-    fs.appendFileSync('C:\\temp\\log.txt', args.join('\t') + '\n');
+    //fs.appendFileSync('C:\\temp\\log.txt', args.join('\t') + '\n');
 }

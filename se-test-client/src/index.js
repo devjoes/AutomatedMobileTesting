@@ -31,11 +31,10 @@ const runTests = () => new Promise(res => {
 
         //TODO: Make it give up if takes x time more than the average time to get a driver
 
-        //TODO: Remove!!
-        for (let i = 0; i < 2; i++) {
+        // Lots of tests for demonstration purposes
+        for (let i = 0; i < 60; i++) {
             files.filter(f => f.match(/test\.js/i))
                 .forEach(f => mocha.addFile(path.join(__dirname,'..', 'tests', f)));
-            //mocha.addFile("C:\\Development\\testing-talk\\AutomatedMobileTesting\\se-test-client\\src\\tests\\retry.test.js");
         }
 
         const runner = mocha.run(failures => {
