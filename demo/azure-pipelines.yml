@@ -6,23 +6,23 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- task: Gradle@2
-  displayName: 'Build Android App'
-  inputs:
-    workingDirectory: './demo/UiTestCalc/'
-    gradleWrapperFile: './demo/UiTestCalc/gradlew'
-    gradleOptions: '-Xmx3072m'
-    publishJUnitResults: false
-    testResultsFiles: '**/TEST-*.xml'
-    tasks: 'assembleDebug'
-- task: AzurePowerShell@4
-  displayName: 'Publish'
-  inputs:
-    azureSubscription: 'DEV_Retail and Logistics(55476028-cbd9-47a9-bbdd-04dd8b0406fd)'
-    ScriptType: 'FilePath'
-    ScriptPath: './demo/deploy.ps1'
-    ScriptArguments: '-buildnumber ($Build.BuildNumber) -src ($Build.SourcesDirectory)'
-    azurePowerShellVersion: 'LatestVersion'
+# - task: Gradle@2
+#   displayName: 'Build Android App'
+#   inputs:
+#     workingDirectory: './demo/UiTestCalc/'
+#     gradleWrapperFile: './demo/UiTestCalc/gradlew'
+#     gradleOptions: '-Xmx3072m'
+#     publishJUnitResults: false
+#     testResultsFiles: '**/TEST-*.xml'
+#     tasks: 'assembleDebug'
+# - task: AzurePowerShell@4
+#   displayName: 'Publish'
+#   inputs:
+#     azureSubscription: 'DEV_Retail and Logistics(55476028-cbd9-47a9-bbdd-04dd8b0406fd)'
+#     ScriptType: 'FilePath'
+#     ScriptPath: './demo/deploy.ps1'
+#     ScriptArguments: '-buildnumber ($Build.BuildNumber) -src ($Build.SourcesDirectory)'
+#     azurePowerShellVersion: 'LatestVersion'
 - task: Npm@1
   displayName: 'Install NPM testing dependencies'
   inputs:
