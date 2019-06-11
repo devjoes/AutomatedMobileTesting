@@ -19,29 +19,32 @@ const setup = async () => {
 };
 const runTests = () => new Promise(res => {
     const mocha = new Mocha({
-        timeout: 0,
-        retries: 10 // selenium can be a bit unreliable
+        timeout: 0, // 2*60*1000,
+        slow:0,
+        //retries: 10 // selenium can be a bit unreliable
     });
-    mocha.setMaxParallel(data.emulators.length * config.maxQueueLength);
-    fs.readdir(path.join(__dirname, 'tests'), (err, files) => {
+     mocha.setMaxParallel(data.emulators.length * config.maxQueueLength);
+    fs.readdir(path.join(__dirname,'..', 'tests'), (err, files) => {
         if (err) {
             return console.error(err);
         }
 
+        //TODO: Make it give up if takes x time more than the average time to get a driver
+
         //TODO: Remove!!
-        for (let i = 0; i < 100; i++) {
-            files.forEach(f => mocha.addFile(path.join(__dirname, 'tests', f)));
+        for (let i = 0; i < 30; i++) {
+            files.filter(f => f.match(/test\.js/i))
+                .forEach(f => mocha.addFile(path.join(__dirname,'..', 'tests', f)));
+            //mocha.addFile("C:\\Development\\testing-talk\\AutomatedMobileTesting\\se-test-client\\src\\tests\\retry.test.js");
         }
-        console.log(mocha.files);
 
         const runner = mocha.run(failures => {
-            console.log(`Finished ${failures} failures`);
+            console.log(`Finished, there were ${failures} failures`);
             res();
         });
 
         runner.on('fail', test =>
             test && test.udid && data.testFailure(test.udid));
-
     });
 });
 setup()

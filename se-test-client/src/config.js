@@ -1,16 +1,27 @@
 export default {
+    influxdbConfig: {
+        host: '40.113.3.66',
+        options: {
+            path: '/influxdb/write?db=selenium&p=root&precision=n&rp=&u=root',
+            port: 80
+        },
+        database: 'selenium',
+    },
     seleniumUrl: 'http://40.113.3.66',
     seleniumHeaders: {
         'Authorization': 'Basic ' + Buffer.from('demo:demo').toString('base64')
     },
-    maxQueueLength: 2,
+    maxQueueLength: 1,
     emulatorUpdateCoolOffMs: 5000,
+    maxTestDurationSecs: 60,
     capabilities: {
         'deviceName': 'android',
         'platformName': 'android',
         'platformVersion': '4.2.2',
-        'app': '/apps/app.apk',
+        'app': '/apps/calc.apk',
+        //'app': '/apps/app.apk',
         'browserName': 'android',
-        'newSessionWaitTimeout': 60000
+        'newSessionWaitTimeout': 30000,
+        'fullReset': false
     }
 }

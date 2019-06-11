@@ -1,0 +1,84 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: grafana
+  name: grafana
+  namespace: selenium
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - image: docker.io/grafana/grafana:5.4.3
+        imagePullPolicy: IfNotPresent
+        name: grafana
+        envFrom:
+        - secretRef:
+            name: grafana-creds
+        volumeMounts:
+        - mountPath: /etc/grafana/provisioning/datasources/influxdb-datasource.yml
+          name: grafana-config-vol
+          readOnly: true
+          subPath: influxdb-datasource.yml
+        - mountPath: /etc/grafana/provisioning/dashboards/grafana-dashboard-provider.yml
+          name: grafana-config-vol
+          readOnly: true
+          subPath: grafana-dashboard-provider.yml
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: grafana-config-vol
+          configMap:
+            name: grafana-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-config
+  namespace: selenium
+data:
+  grafana-dashboard-provider.yml: "apiVersion: 1\r\n\r\nproviders:\r\n- name: 'default'\r\n
+    \ orgId: 1\r\n  folder: ''\r\n  type: file\r\n  disableDeletion: false\r\n  updateIntervalSeconds:
+    10 #how often Grafana will scan for changed dashboards\r\n  options:\r\n    path:
+    /var/lib/grafana/dashboards"
+  influxdb-datasource.yml: "apiVersion: 1\r\ndatasources:\r\n- name: influxdb\r\n
+    \ type: influxdb\r\n  access: proxy\r\n  orgId: 1\r\n  url: http://influxdb:8086\r\n
+    \ password: root\r\n  user: root\r\n  database: selenium\r\n  version: 1\r\n  editable:
+    false"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: selenium
+  labels:
+    app: grafana
+spec:
+  ports:
+  - port: 80
+    targetPort: 3000
+    name: grafana
+  selector:
+    app: grafana
+  type: LoadBalancer
+  sessionAffinity: None
+---
+# When setting this up production these secrets should be in a key vault
+apiVersion: v1
+data:
+  GF_SECURITY_ADMIN_PASSWORD: NWVsM25pdW0h
+  GF_SECURITY_ADMIN_USER: YWRtaW4=
+kind: Secret
+metadata:
+  name: grafana-creds
+  namespace: selenium
+type: Opaque

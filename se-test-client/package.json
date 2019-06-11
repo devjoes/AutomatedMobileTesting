@@ -11,6 +11,7 @@
   "author": "Joe Shearn",
   "license": "ISC",
   "dependencies": {
+    "influx": "^5.1.0",
     "node-fetch": "^2.6.0",
     "node-ipc": "^9.1.1",
     "wd": "^1.11.2"
@@ -22,6 +23,6 @@
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
     "mocha-logger": "^1.0.6",
-    "mocha-parallel-tests": "^2.1.1"
+    "mocha-parallel-tests": "^2.1.2"
   }
 }
