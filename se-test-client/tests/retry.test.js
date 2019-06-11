@@ -1,16 +1,22 @@
-// import {
-//     describe,
-//     it
-// } from 'mocha';
-// import {
-//     expect
-// } from 'chai';
-// import getDriver from '../getDriver';
-// import {
-//     basename
-// } from 'path';
-// import mlog from 'mocha-logger';
-// import ipcClient from '../ipc/client';
+import {
+    describe,
+    it
+} from 'mocha';
+import {
+    expect
+} from 'chai';
+
+import {
+    basename
+} from 'path';
+import mlog from 'mocha-logger';
+import {suiteStarted} from '../src/metrics'
+
+// describe('log metrics', () => {
+//     it('logs suite start', () =>{
+//         suiteStarted('a','b',1);
+//     });
+// });
 
 // describe('When a test fails 3/4 of the time ' + basename(__filename), function () {
 //     mlog.log('Describe start');

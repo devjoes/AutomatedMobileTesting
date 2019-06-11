@@ -16,6 +16,6 @@ export const equals = 'equals';
 export const clear = 'clear';
 export const point = 'point';
 
-export const pointChar = '┬╖';
-export const multiplyChar = '├ù';
-export const divideChar = '├╖';
+export const pointChar = '·';
+export const multiplyChar = '×';
+export const divideChar = '÷';

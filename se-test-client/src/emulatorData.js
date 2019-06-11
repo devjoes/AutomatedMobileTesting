@@ -56,6 +56,7 @@ export default () => ({
         });
     },
     testFailure: function (udid) {
+        // TODO: Check this works
         console.log(udid + ' failed');
         this.emulators[udid].failures++;
     }
