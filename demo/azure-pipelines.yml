@@ -32,9 +32,9 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: '/se-test-client'
+    workingDir: './se-test-client'
 - task: Npm@1
   inputs:
     command: 'custom'
-    workingDir: '/se-test-client'
+    workingDir: './se-test-client'
     customCommand: 'run test'
