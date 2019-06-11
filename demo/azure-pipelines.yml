@@ -10,18 +10,6 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-# - task: Npm@1
-#   inputs:
-#     command: 'install'
-#     workingDir: './retail-app'
-# - task: Gradle@2
-#   inputs:
-#     workingDirectory: './retail-app/android'
-#     gradleWrapperFile: './retail-app/android/gradlew'
-#     gradleOptions: '-Xmx3072m'
-#     publishJUnitResults: false
-#     testResultsFiles: '**/TEST-*.xml'
-#     tasks: 'assembleDebug'
 - task: Gradle@2
   inputs:
     workingDirectory: './UiTestCalc/app'
@@ -41,3 +29,12 @@ steps:
     ScriptPath: './deploy.ps1'
     ScriptArguments: '-buildnumber ($Build.BuildNumber) -src ($Build.SourcesDirectory)'
     azurePowerShellVersion: 'LatestVersion'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '/se-test-client'
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '/se-test-client'
+    customCommand: 'run test'
