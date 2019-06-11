@@ -1,0 +1,43 @@
+# Android
+# Build your Android project with Gradle.
+# Add steps that test, sign, and distribute the APK, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/android
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+# - task: Npm@1
+#   inputs:
+#     command: 'install'
+#     workingDir: './retail-app'
+# - task: Gradle@2
+#   inputs:
+#     workingDirectory: './retail-app/android'
+#     gradleWrapperFile: './retail-app/android/gradlew'
+#     gradleOptions: '-Xmx3072m'
+#     publishJUnitResults: false
+#     testResultsFiles: '**/TEST-*.xml'
+#     tasks: 'assembleDebug'
+- task: Gradle@2
+  inputs:
+    workingDirectory: './UiTestCalc/app'
+    gradleWrapperFile: './UiTestCalc/app/gradlew'
+    gradleOptions: '-Xmx3072m'
+    publishJUnitResults: false
+    testResultsFiles: '**/TEST-*.xml'
+    tasks: 'assembleDebug'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'get-childitem . -Recurse'
+- task: AzurePowerShell@4
+  inputs:
+    azureSubscription: 'DEV_Retail and Logistics(55476028-cbd9-47a9-bbdd-04dd8b0406fd)'
+    ScriptType: 'FilePath'
+    ScriptPath: './deploy.ps1'
+    ScriptArguments: '-buildnumber ($Build.BuildNumber) -src ($Build.SourcesDirectory)'
+    azurePowerShellVersion: 'LatestVersion'
