@@ -7,7 +7,6 @@ $path = "apps/UITestingDemo"
 Write-Output "Creating folder $path"
 New-AzStorageDirectory -ShareName "selenium" -Context $Context -Path $path
 Write-Output "Uploading files to $path"
-$src="$ENV:BUILD_SOURCESDIRECTORY\UiTestCalc\app\app\build\outputs\apk\debug\app-debug.apk"
-#$src="$ENV:BUILD_SOURCESDIRECTORY\retail-app\android\app\build\outputs\apk\app-debug.apk"
+$src="$ENV:BUILD_SOURCESDIRECTORY\demo\UiTestCalc\app\build\outputs\apk\debug\app-debug.apk"
 
 Set-AzStorageFileContent -ShareName "selenium" -Source "$src" -Path "$path/$ENV:BUILD_BUILDNUMBER.apk" -Force -Context $Context
