@@ -20,11 +20,15 @@ const setup = async () => {
 const runTests = () => new Promise(res => {
     const mocha = new Mocha({
         timeout: 0, // 2*60*1000,
-        slow:0,
-        //retries: 10 // selenium can be a bit unreliable - we now retry in 
+        slow: 0
+        // retries: 10 // selenium can be a bit unreliable - we now retry in code instead
+        // reporter: 'mocha-junit-reporter',
+        // reporterOptions: {
+        //     mochaFile: './test_results.xml'
+        // }
     });
-     mocha.setMaxParallel(data.emulators.length * config.maxQueueLength);
-    fs.readdir(path.join(__dirname,'..', 'tests'), (err, files) => {
+    mocha.setMaxParallel(data.emulators.length * config.maxQueueLength);
+    fs.readdir(path.join(__dirname, '..', 'tests'), (err, files) => {
         if (err) {
             return console.error(err);
         }
@@ -32,9 +36,9 @@ const runTests = () => new Promise(res => {
         //TODO: Make it give up if takes x time more than the average time to get a driver
 
         // Lots of tests for demonstration purposes
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < 1; i++) {
             files.filter(f => f.match(/test\.js/i))
-                .forEach(f => mocha.addFile(path.join(__dirname,'..', 'tests', f)));
+                .forEach(f => mocha.addFile(path.join(__dirname, '..', 'tests', f)));
         }
 
         const runner = mocha.run(failures => {

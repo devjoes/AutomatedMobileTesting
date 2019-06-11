@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="617.28700000000003" tests="60" failures="0">
+  <testsuite name="Basic calculator tests" timestamp="2019-06-11T19:59:06" tests="60" file="C:\Development\testing-talk\AutomatedMobileTesting\se-test-client\tests\basic.test.js" failures="0" time="217.28700000000003">
+    <testcase name=" Basic calculator tests When a number is clicked it shows on the display" time="8.622" classname="When a number is clicked it shows on the display">
+    </testcase>
+    <testcase name=" Basic calculator tests When 123.4...5 is entered it displays 123.45" time="35.71" classname="When 123.4...5 is entered it displays 123.45">
+    </testcase>
+    <testcase name=" Basic calculator tests When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4" time="35.564" classname="When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4">
+    </testcase>
+    <testcase name=" Basic calculator tests When 2 + 3 is entered it displays and equals 5" time="18.528" classname="When 2 + 3 is entered it displays and equals 5">
+    </testcase>
+    <testcase name=" Basic calculator tests When 5 * -5 is entered it displays and equals -25" time="21.78" classname="When 5 * -5 is entered it displays and equals -25">
+    </testcase>
+    <testcase name=" Basic calculator tests When a sum is cleared it displays 0" time="14.211" classname="When a sum is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is cleared it displays 0" time="21.097" classname="When a result is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown pressing a number clears it" time="21.542" classname="When a result is shown pressing a number clears it">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown arithmatic is appended to it" time="21.559" classname="When a result is shown arithmatic is appended to it">
+    </testcase>
+    <testcase name=" Basic calculator tests When 0 ÷ 0 is entered it is displays and equals NaN" time="18.674" classname="When 0 ÷ 0 is entered it is displays and equals NaN">
+    </testcase>
+    <testcase name=" Basic calculator tests When a number is clicked it shows on the display" time="9.522" classname="When a number is clicked it shows on the display">
+    </testcase>
+    <testcase name=" Basic calculator tests When 123.4...5 is entered it displays 123.45" time="34.72" classname="When 123.4...5 is entered it displays 123.45">
+    </testcase>
+    <testcase name=" Basic calculator tests When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4" time="34.544" classname="When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4">
+    </testcase>
+    <testcase name=" Basic calculator tests When 2 + 3 is entered it displays and equals 5" time="17.628" classname="When 2 + 3 is entered it displays and equals 5">
+    </testcase>
+    <testcase name=" Basic calculator tests When 5 * -5 is entered it displays and equals -25" time="20.78" classname="When 5 * -5 is entered it displays and equals -25">
+    </testcase>
+    <testcase name=" Basic calculator tests When a sum is cleared it displays 0" time="14.111" classname="When a sum is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is cleared it displays 0" time="20.097" classname="When a result is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown pressing a number clears it" time="20.532" classname="When a result is shown pressing a number clears it">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown arithmatic is appended to it" time="21.159" classname="When a result is shown arithmatic is appended to it">
+    </testcase>
+    <testcase name=" Basic calculator tests When 0 ÷ 0 is entered it is displays and equals NaN" time="17.674" classname="When 0 ÷ 0 is entered it is displays and equals NaN">
+    </testcase>
+    <testcase name=" Basic calculator tests When a number is clicked it shows on the display" time="10.522" classname="When a number is clicked it shows on the display">
+    </testcase>
+    <testcase name=" Basic calculator tests When 123.4...5 is entered it displays 123.45" time="34.62" classname="When 123.4...5 is entered it displays 123.45">
+    </testcase>
+    <testcase name=" Basic calculator tests When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4" time="34.544" classname="When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4">
+    </testcase>
+    <testcase name=" Basic calculator tests When 2 + 3 is entered it displays and equals 5" time="19.518" classname="When 2 + 3 is entered it displays and equals 5">
+    </testcase>
+    <testcase name=" Basic calculator tests When 5 * -5 is entered it displays and equals -25" time="20.76" classname="When 5 * -5 is entered it displays and equals -25">
+    </testcase>
+    <testcase name=" Basic calculator tests When a sum is cleared it displays 0" time="13.21" classname="When a sum is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is cleared it displays 0" time="20.97" classname="When a result is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown pressing a number clears it" time="26.142" classname="When a result is shown pressing a number clears it">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown arithmatic is appended to it" time="20.519" classname="When a result is shown arithmatic is appended to it">
+    </testcase>
+    <testcase name=" Basic calculator tests When 0 ÷ 0 is entered it is displays and equals NaN" time="19.74" classname="When 0 ÷ 0 is entered it is displays and equals NaN">
+    </testcase>
+    <testcase name=" Basic calculator tests When a number is clicked it shows on the display" time="8.622" classname="When a number is clicked it shows on the display">
+    </testcase>
+    <testcase name=" Basic calculator tests When 123.4...5 is entered it displays 123.45" time="35.71" classname="When 123.4...5 is entered it displays 123.45">
+    </testcase>
+    <testcase name=" Basic calculator tests When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4" time="35.564" classname="When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4">
+    </testcase>
+    <testcase name=" Basic calculator tests When 2 + 3 is entered it displays and equals 5" time="18.528" classname="When 2 + 3 is entered it displays and equals 5">
+    </testcase>
+    <testcase name=" Basic calculator tests When 5 * -5 is entered it displays and equals -25" time="21.78" classname="When 5 * -5 is entered it displays and equals -25">
+    </testcase>
+    <testcase name=" Basic calculator tests When a sum is cleared it displays 0" time="14.211" classname="When a sum is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is cleared it displays 0" time="21.097" classname="When a result is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown pressing a number clears it" time="21.542" classname="When a result is shown pressing a number clears it">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown arithmatic is appended to it" time="21.559" classname="When a result is shown arithmatic is appended to it">
+    </testcase>
+    <testcase name=" Basic calculator tests When 0 ÷ 0 is entered it is displays and equals NaN" time="18.674" classname="When 0 ÷ 0 is entered it is displays and equals NaN">
+    </testcase>
+    <testcase name=" Basic calculator tests When a number is clicked it shows on the display" time="9.522" classname="When a number is clicked it shows on the display">
+    </testcase>
+    <testcase name=" Basic calculator tests When 123.4...5 is entered it displays 123.45" time="34.72" classname="When 123.4...5 is entered it displays 123.45">
+    </testcase>
+    <testcase name=" Basic calculator tests When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4" time="34.544" classname="When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4">
+    </testcase>
+    <testcase name=" Basic calculator tests When 2 + 3 is entered it displays and equals 5" time="17.628" classname="When 2 + 3 is entered it displays and equals 5">
+    </testcase>
+    <testcase name=" Basic calculator tests When 5 * -5 is entered it displays and equals -25" time="20.78" classname="When 5 * -5 is entered it displays and equals -25">
+    </testcase>
+    <testcase name=" Basic calculator tests When a sum is cleared it displays 0" time="14.111" classname="When a sum is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is cleared it displays 0" time="20.097" classname="When a result is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown pressing a number clears it" time="20.532" classname="When a result is shown pressing a number clears it">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown arithmatic is appended to it" time="21.159" classname="When a result is shown arithmatic is appended to it">
+    </testcase>
+    <testcase name=" Basic calculator tests When 0 ÷ 0 is entered it is displays and equals NaN" time="17.674" classname="When 0 ÷ 0 is entered it is displays and equals NaN">
+    </testcase>
+    <testcase name=" Basic calculator tests When a number is clicked it shows on the display" time="10.522" classname="When a number is clicked it shows on the display">
+    </testcase>
+    <testcase name=" Basic calculator tests When 123.4...5 is entered it displays 123.45" time="34.62" classname="When 123.4...5 is entered it displays 123.45">
+    </testcase>
+    <testcase name=" Basic calculator tests When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4" time="34.544" classname="When -2 × × 2 ÷ ÷ is entered it is displayed and equals -4">
+    </testcase>
+    <testcase name=" Basic calculator tests When 2 + 3 is entered it displays and equals 5" time="19.518" classname="When 2 + 3 is entered it displays and equals 5">
+    </testcase>
+    <testcase name=" Basic calculator tests When 5 * -5 is entered it displays and equals -25" time="20.76" classname="When 5 * -5 is entered it displays and equals -25">
+    </testcase>
+    <testcase name=" Basic calculator tests When a sum is cleared it displays 0" time="13.21" classname="When a sum is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is cleared it displays 0" time="20.97" classname="When a result is cleared it displays 0">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown pressing a number clears it" time="26.142" classname="When a result is shown pressing a number clears it">
+    </testcase>
+    <testcase name=" Basic calculator tests When a result is shown arithmatic is appended to it" time="20.519" classname="When a result is shown arithmatic is appended to it">
+    </testcase>
+    <testcase name=" Basic calculator tests When 0 ÷ 0 is entered it is displays and equals NaN" time="19.74" classname="When 0 ÷ 0 is entered it is displays and equals NaN">
+    </testcase>
+  </testsuite>
+</testsuites>
