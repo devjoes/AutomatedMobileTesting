@@ -164,6 +164,6 @@
             android:layout_height="89dp"
             android:id="@+id/btnEquals" android:textSize="36sp"
             android:background="@color/colorPurple" android:textColor="@color/colorWhite"
-            app:layout_constraintTop_toBottomOf="@id/grid" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:onClick="onClick_Equals" android:contentDescription="equals"/>
 </android.support.constraint.ConstraintLayout>
