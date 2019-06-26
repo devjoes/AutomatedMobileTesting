@@ -1,0 +1,11 @@
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\bin\Debug\netcoreapp2.1\SeleniumInfo.Tests.deps.json
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\bin\Debug\netcoreapp2.1\SeleniumInfo.Tests.runtimeconfig.json
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\bin\Debug\netcoreapp2.1\SeleniumInfo.Tests.runtimeconfig.dev.json
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\bin\Debug\netcoreapp2.1\SeleniumInfo.Tests.dll
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\obj\Debug\netcoreapp2.1\SeleniumInfo.Tests.csprojAssemblyReference.cache
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\obj\Debug\netcoreapp2.1\SeleniumInfo.Tests.csproj.CoreCompileInputs.cache
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\obj\Debug\netcoreapp2.1\SeleniumInfo.Tests.AssemblyInfoInputs.cache
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo.Tests\obj\Debug\netcoreapp2.1\SeleniumInfo.Tests.AssemblyInfo.cs

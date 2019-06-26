@@ -1,0 +1,17 @@
+C:\Development\AutomatedMobileTesting\Management\Management.Api\bin\Debug\netcoreapp2.2\Management.Api.deps.json
+C:\Development\AutomatedMobileTesting\Management\Management.Api\bin\Debug\netcoreapp2.2\Management.Api.runtimeconfig.json
+C:\Development\AutomatedMobileTesting\Management\Management.Api\bin\Debug\netcoreapp2.2\Management.Api.runtimeconfig.dev.json
+C:\Development\AutomatedMobileTesting\Management\Management.Api\bin\Debug\netcoreapp2.2\Management.Api.dll
+C:\Development\AutomatedMobileTesting\Management\Management.Api\bin\Debug\netcoreapp2.2\Management.Api.pdb
+C:\Development\AutomatedMobileTesting\Management\Management.Api\bin\Debug\netcoreapp2.2\Management.Core.dll
+C:\Development\AutomatedMobileTesting\Management\Management.Api\bin\Debug\netcoreapp2.2\Management.Core.pdb
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.csprojAssemblyReference.cache
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.csproj.CoreCompileInputs.cache
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.RazorAssemblyInfo.cache
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.RazorAssemblyInfo.cs
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.AssemblyInfoInputs.cache
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.AssemblyInfo.cs
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.RazorTargetAssemblyInfo.cache
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.csproj.CopyComplete
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.dll
+C:\Development\AutomatedMobileTesting\Management\Management.Api\obj\Debug\netcoreapp2.2\Management.Api.pdb

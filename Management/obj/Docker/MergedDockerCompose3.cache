@@ -1,0 +1,51 @@
+services:
+  datalogger:
+    build:
+      context: C:\Development\AutomatedMobileTesting\Management
+      dockerfile: DataLogger/Dockerfile
+    image: datalogger
+  management.api:
+    build:
+      context: C:\Development\AutomatedMobileTesting\Management
+      dockerfile: Management.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '44263'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: managementapi
+    ports:
+    - published: 63240
+      target: 80
+    - published: 44263
+      target: 443
+    - published: 8091
+      target: 5000
+    volumes:
+    - C:\Users\Joe\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Joe\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  redis:
+    hostname: redis
+    image: redis
+    ports:
+    - published: 6379
+      target: 6379
+  seleniuminfo:
+    build:
+      context: C:\Development\AutomatedMobileTesting\Management
+      dockerfile: SeleniumInfo/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '44301'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: seleniuminfo
+    ports:
+    - published: 50558
+      target: 80
+    - published: 44301
+      target: 443
+    - published: 8090
+      target: 5000
+    volumes:
+    - C:\Users\Joe\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Joe\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

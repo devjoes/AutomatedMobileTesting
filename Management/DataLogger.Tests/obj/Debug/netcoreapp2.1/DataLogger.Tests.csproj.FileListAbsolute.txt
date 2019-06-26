@@ -1,0 +1,14 @@
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\bin\Debug\netcoreapp2.1\DataLogger.Tests.deps.json
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\bin\Debug\netcoreapp2.1\DataLogger.Tests.runtimeconfig.json
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\bin\Debug\netcoreapp2.1\DataLogger.Tests.runtimeconfig.dev.json
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\bin\Debug\netcoreapp2.1\DataLogger.Tests.dll
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\bin\Debug\netcoreapp2.1\DataLogger.Tests.pdb
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\obj\Debug\netcoreapp2.1\DataLogger.Tests.csprojAssemblyReference.cache
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\obj\Debug\netcoreapp2.1\DataLogger.Tests.csproj.CoreCompileInputs.cache
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\obj\Debug\netcoreapp2.1\DataLogger.Tests.AssemblyInfoInputs.cache
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\obj\Debug\netcoreapp2.1\DataLogger.Tests.AssemblyInfo.cs
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\obj\Debug\netcoreapp2.1\DataLogger.Tests.dll
+C:\Development\AutomatedMobileTesting\Management\DataLogger.Tests\obj\Debug\netcoreapp2.1\DataLogger.Tests.pdb

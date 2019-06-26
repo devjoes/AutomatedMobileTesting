@@ -1,0 +1,12 @@
+C:\Development\AutomatedMobileTesting\Management\bin\Debug\appsettings.json
+C:\Development\AutomatedMobileTesting\Management\bin\Debug\DataLogger.dll
+C:\Development\AutomatedMobileTesting\Management\bin\Debug\Management.Api.dll
+C:\Development\AutomatedMobileTesting\Management\bin\Debug\SeleniumInfo.dll
+C:\Development\AutomatedMobileTesting\Management\bin\Debug\Management.Core.dll
+C:\Development\AutomatedMobileTesting\Management\bin\Debug\Management.Api.pdb
+C:\Development\AutomatedMobileTesting\Management\bin\Debug\SeleniumInfo.pdb
+C:\Development\AutomatedMobileTesting\Management\bin\Debug\DataLogger.pdb
+C:\Development\AutomatedMobileTesting\Management\bin\Debug\Management.Core.pdb
+C:\Development\AutomatedMobileTesting\Management\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Development\AutomatedMobileTesting\Management\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Development\AutomatedMobileTesting\Management\obj\Debug\docker-compose.dcproj.CopyComplete

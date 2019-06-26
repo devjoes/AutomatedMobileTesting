@@ -1,0 +1,17 @@
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\bin\Debug\netcoreapp2.2\SeleniumInfo.deps.json
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\bin\Debug\netcoreapp2.2\SeleniumInfo.runtimeconfig.json
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\bin\Debug\netcoreapp2.2\SeleniumInfo.runtimeconfig.dev.json
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\bin\Debug\netcoreapp2.2\SeleniumInfo.dll
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\bin\Debug\netcoreapp2.2\SeleniumInfo.pdb
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\bin\Debug\netcoreapp2.2\Management.Core.dll
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\bin\Debug\netcoreapp2.2\Management.Core.pdb
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.csprojAssemblyReference.cache
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.csproj.CoreCompileInputs.cache
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.RazorAssemblyInfo.cache
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.RazorAssemblyInfo.cs
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.AssemblyInfoInputs.cache
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.AssemblyInfo.cs
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.RazorTargetAssemblyInfo.cache
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.csproj.CopyComplete
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.dll
+C:\Development\AutomatedMobileTesting\Management\SeleniumInfo\obj\Debug\netcoreapp2.2\SeleniumInfo.pdb

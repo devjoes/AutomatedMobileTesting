@@ -1,0 +1,109 @@
+services:
+  datalogger:
+    build:
+      context: C:\Development\AutomatedMobileTesting\Management
+      dockerfile: DataLogger/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: DataLogger
+      target: base
+    depends_on:
+    - redis
+    - seleniuminfo
+    entrypoint: tail -f /dev/null
+    environment:
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: datalogger:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "bin/Debug/netcoreapp2.2/DataLogger.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    volumes:
+    - C:\Development\AutomatedMobileTesting\Management\DataLogger:/app:rw
+    - C:\Users\Joe\vsdbg\vs2017u5:/remote_debugger:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\Joe\.nuget\packages:/root/.nuget/packages:ro
+  management.api:
+    build:
+      context: C:\Development\AutomatedMobileTesting\Management
+      dockerfile: Management.Api/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Management.Api
+      target: base
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '44263'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: managementapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "bin/Debug/netcoreapp2.2/Management.Api.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 63140
+      target: 80
+    - published: 44163
+      target: 443
+    - published: 8091
+      target: 5000
+    volumes:
+    - C:\Development\AutomatedMobileTesting\Management\Management.Api:/app:rw
+    - C:\Users\Joe\vsdbg\vs2017u5:/remote_debugger:ro
+    - C:\Users\Joe\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Joe\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\Joe\.nuget\packages:/root/.nuget/packages:ro
+  redis:
+    hostname: redis
+    image: redis
+    ports:
+    - published: 6379
+      target: 6379
+  seleniuminfo:
+    build:
+      context: C:\Development\AutomatedMobileTesting\Management
+      dockerfile: SeleniumInfo/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: SeleniumInfo
+      target: base
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '44301'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: seleniuminfo:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "bin/Debug/netcoreapp2.2/SeleniumInfo.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 50558
+      target: 80
+    - published: 44301
+      target: 443
+    - published: 8090
+      target: 5000
+    volumes:
+    - C:\Development\AutomatedMobileTesting\Management\SeleniumInfo:/app:rw
+    - C:\Users\Joe\vsdbg\vs2017u5:/remote_debugger:ro
+    - C:\Users\Joe\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Joe\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\Joe\.nuget\packages:/root/.nuget/packages:ro
+version: '3.4'

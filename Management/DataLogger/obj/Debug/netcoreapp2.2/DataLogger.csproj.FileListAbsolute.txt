@@ -1,0 +1,15 @@
+C:\Development\AutomatedMobileTesting\Management\DataLogger\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Development\AutomatedMobileTesting\Management\DataLogger\bin\Debug\netcoreapp2.2\DataLogger.deps.json
+C:\Development\AutomatedMobileTesting\Management\DataLogger\bin\Debug\netcoreapp2.2\DataLogger.runtimeconfig.json
+C:\Development\AutomatedMobileTesting\Management\DataLogger\bin\Debug\netcoreapp2.2\DataLogger.runtimeconfig.dev.json
+C:\Development\AutomatedMobileTesting\Management\DataLogger\bin\Debug\netcoreapp2.2\DataLogger.dll
+C:\Development\AutomatedMobileTesting\Management\DataLogger\bin\Debug\netcoreapp2.2\DataLogger.pdb
+C:\Development\AutomatedMobileTesting\Management\DataLogger\bin\Debug\netcoreapp2.2\Management.Core.dll
+C:\Development\AutomatedMobileTesting\Management\DataLogger\bin\Debug\netcoreapp2.2\Management.Core.pdb
+C:\Development\AutomatedMobileTesting\Management\DataLogger\obj\Debug\netcoreapp2.2\DataLogger.csprojAssemblyReference.cache
+C:\Development\AutomatedMobileTesting\Management\DataLogger\obj\Debug\netcoreapp2.2\DataLogger.csproj.CoreCompileInputs.cache
+C:\Development\AutomatedMobileTesting\Management\DataLogger\obj\Debug\netcoreapp2.2\DataLogger.AssemblyInfoInputs.cache
+C:\Development\AutomatedMobileTesting\Management\DataLogger\obj\Debug\netcoreapp2.2\DataLogger.AssemblyInfo.cs
+C:\Development\AutomatedMobileTesting\Management\DataLogger\obj\Debug\netcoreapp2.2\DataLogger.csproj.CopyComplete
+C:\Development\AutomatedMobileTesting\Management\DataLogger\obj\Debug\netcoreapp2.2\DataLogger.dll
+C:\Development\AutomatedMobileTesting\Management\DataLogger\obj\Debug\netcoreapp2.2\DataLogger.pdb

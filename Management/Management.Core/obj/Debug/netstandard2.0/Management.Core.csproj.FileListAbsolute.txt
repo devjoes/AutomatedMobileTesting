@@ -1,0 +1,9 @@
+C:\Development\AutomatedMobileTesting\Management\Management.Core\bin\Debug\netstandard2.0\Management.Core.deps.json
+C:\Development\AutomatedMobileTesting\Management\Management.Core\bin\Debug\netstandard2.0\Management.Core.dll
+C:\Development\AutomatedMobileTesting\Management\Management.Core\bin\Debug\netstandard2.0\Management.Core.pdb
+C:\Development\AutomatedMobileTesting\Management\Management.Core\obj\Debug\netstandard2.0\Management.Core.csprojAssemblyReference.cache
+C:\Development\AutomatedMobileTesting\Management\Management.Core\obj\Debug\netstandard2.0\Management.Core.csproj.CoreCompileInputs.cache
+C:\Development\AutomatedMobileTesting\Management\Management.Core\obj\Debug\netstandard2.0\Management.Core.AssemblyInfoInputs.cache
+C:\Development\AutomatedMobileTesting\Management\Management.Core\obj\Debug\netstandard2.0\Management.Core.AssemblyInfo.cs
+C:\Development\AutomatedMobileTesting\Management\Management.Core\obj\Debug\netstandard2.0\Management.Core.dll
+C:\Development\AutomatedMobileTesting\Management\Management.Core\obj\Debug\netstandard2.0\Management.Core.pdb

@@ -1,0 +1,14 @@
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\bin\Debug\netcoreapp2.1\Management.Api.Tests.deps.json
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\bin\Debug\netcoreapp2.1\Management.Api.Tests.runtimeconfig.json
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\bin\Debug\netcoreapp2.1\Management.Api.Tests.runtimeconfig.dev.json
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\bin\Debug\netcoreapp2.1\Management.Api.Tests.dll
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\bin\Debug\netcoreapp2.1\Management.Api.Tests.pdb
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\obj\Debug\netcoreapp2.1\Management.Api.Tests.csprojAssemblyReference.cache
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\obj\Debug\netcoreapp2.1\Management.Api.Tests.csproj.CoreCompileInputs.cache
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\obj\Debug\netcoreapp2.1\Management.Api.Tests.AssemblyInfoInputs.cache
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\obj\Debug\netcoreapp2.1\Management.Api.Tests.AssemblyInfo.cs
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\obj\Debug\netcoreapp2.1\Management.Api.Tests.dll
+C:\Development\AutomatedMobileTesting\Management.Api.Tests\obj\Debug\netcoreapp2.1\Management.Api.Tests.pdb

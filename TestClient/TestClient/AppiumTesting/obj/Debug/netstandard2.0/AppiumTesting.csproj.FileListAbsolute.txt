@@ -1,6 +1,0 @@
-C:\Development\AutomatedMobileTesting\TestClient\TestClient\AppiumTesting\bin\Debug\netstandard2.0\AppiumTesting.deps.json
-C:\Development\AutomatedMobileTesting\TestClient\TestClient\AppiumTesting\bin\Debug\netstandard2.0\AppiumTesting.dll
-C:\Development\AutomatedMobileTesting\TestClient\TestClient\AppiumTesting\obj\Debug\netstandard2.0\AppiumTesting.csprojAssemblyReference.cache
-C:\Development\AutomatedMobileTesting\TestClient\TestClient\AppiumTesting\obj\Debug\netstandard2.0\AppiumTesting.csproj.CoreCompileInputs.cache
-C:\Development\AutomatedMobileTesting\TestClient\TestClient\AppiumTesting\obj\Debug\netstandard2.0\AppiumTesting.AssemblyInfoInputs.cache
-C:\Development\AutomatedMobileTesting\TestClient\TestClient\AppiumTesting\obj\Debug\netstandard2.0\AppiumTesting.AssemblyInfo.cs

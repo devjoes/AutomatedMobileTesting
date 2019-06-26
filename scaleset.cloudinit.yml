@@ -1,5 +1,0 @@
-#cloud-config
-script: |
-<script>
-shutdown /r /t 1
-</script>
